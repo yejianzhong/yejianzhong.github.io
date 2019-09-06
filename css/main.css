@@ -1655,6 +1655,12 @@ article:last-child .post-eof {
   padding: 2px;
   border-radius: 50%;
 }
+.site-author-image {
+  transition: transform 1s ease-out;
+}
+.site-author-image:hover {
+  transform: rotateZ(360deg);
+}
 .site-author-name {
   color: #222;
   font-weight: 600;
@@ -1678,10 +1684,13 @@ article:last-child .post-eof {
   margin-bottom: 10px;
   margin-right: 10px;
   vertical-align: middle;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff382d;
+  background: #1ae3de;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
