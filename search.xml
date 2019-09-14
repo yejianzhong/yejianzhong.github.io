@@ -1,14 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[DATAHUB]]></title>
-    <url>%2F2019%2F09%2F06%2FDATAHUB%2F</url>
-    <content type="text"><![CDATA[DATAHUB DATAHUB问题记录： 以下为代码块显示测试 123456789101112memParam.clear(); memParam.add(MsgListCustStrCVal.ORGANIZATIONID, organizationId); memParam.add(MsgListCustStrCVal.DATAHUB_CUSTOMERID, datahubCustomerId); memParam.add(MsgListCustStrCVal.MESSAGEID, messageId); memParam.addNoIn(MsgListCustStrCVal.MESSAGETYPE, "H"); memParam.addNoIn(MsgListCustStrCVal.INOUT, "O"); BizComponent bizMsgType = MemConfigUtils.getInstance().getMsgConfig(MsgListCustStrCVal.CACHE_ID, memParam); List&lt;String&gt; detailStdTable = new ArrayList&lt;String&gt;(); for (RecordMap&lt;String, Object&gt; record : bizMsgType.getRecords()) &#123; detailStdTable.add(tableUtil.getStdTable(organizationId, datahubCustomerId, messageId, stdNo, record.getFieldValue(DatahubCommonCVal.MESSAGETYPE), messageGroupSysId)); &#125;]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>DATAHUB</title>
+      <link href="/2019/09/14/DATAHUB_TEST/"/>
+      <url>/2019/09/14/DATAHUB_TEST/</url>
+      
+        <content type="html"><![CDATA[<p>DATAHUB新建文档测试</p><p>DATAHUB问题记录：</p><p>以下为代码块显示测试</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">memParam.clear();</span><br><span class="line">           memParam.add(MsgListCustStrCVal.ORGANIZATIONID, organizationId);</span><br><span class="line">           memParam.add(MsgListCustStrCVal.DATAHUB_CUSTOMERID, datahubCustomerId);</span><br><span class="line">           memParam.add(MsgListCustStrCVal.MESSAGEID, messageId);</span><br><span class="line">           memParam.addNoIn(MsgListCustStrCVal.MESSAGETYPE, <span class="string">"H"</span>);</span><br><span class="line">           memParam.addNoIn(MsgListCustStrCVal.INOUT, <span class="string">"O"</span>);</span><br><span class="line">           BizComponent bizMsgType = MemConfigUtils.getInstance().getMsgConfig(MsgListCustStrCVal.CACHE_ID, memParam);</span><br><span class="line">           List&lt;String&gt; detailStdTable = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">           <span class="keyword">for</span> (RecordMap&lt;String, Object&gt; record : bizMsgType.getRecords()) &#123; </span><br><span class="line">               detailStdTable.add(tableUtil.getStdTable(organizationId, datahubCustomerId, messageId, stdNo, record.getFieldValue(DatahubCommonCVal.MESSAGETYPE),</span><br><span class="line">                       messageGroupSysId));</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
       <categories>
-        <category>DATAHUB</category>
+          
+          <category> DATAHUB </category>
+          
       </categories>
-      <tags>
-        <tag>DATAHUB</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> DATAHUB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>DATAHUB</title>
+      <link href="/2019/09/06/DATAHUB/"/>
+      <url>/2019/09/06/DATAHUB/</url>
+      
+        <content type="html"><![CDATA[<p>DATAHUB</p><p>DATAHUB问题记录：</p><p>以下为代码块显示测试</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">memParam.clear();</span><br><span class="line">           memParam.add(MsgListCustStrCVal.ORGANIZATIONID, organizationId);</span><br><span class="line">           memParam.add(MsgListCustStrCVal.DATAHUB_CUSTOMERID, datahubCustomerId);</span><br><span class="line">           memParam.add(MsgListCustStrCVal.MESSAGEID, messageId);</span><br><span class="line">           memParam.addNoIn(MsgListCustStrCVal.MESSAGETYPE, <span class="string">"H"</span>);</span><br><span class="line">           memParam.addNoIn(MsgListCustStrCVal.INOUT, <span class="string">"O"</span>);</span><br><span class="line">           BizComponent bizMsgType = MemConfigUtils.getInstance().getMsgConfig(MsgListCustStrCVal.CACHE_ID, memParam);</span><br><span class="line">           List&lt;String&gt; detailStdTable = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">           <span class="keyword">for</span> (RecordMap&lt;String, Object&gt; record : bizMsgType.getRecords()) &#123; </span><br><span class="line">               detailStdTable.add(tableUtil.getStdTable(organizationId, datahubCustomerId, messageId, stdNo, record.getFieldValue(DatahubCommonCVal.MESSAGETYPE),</span><br><span class="line">                       messageGroupSysId));</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> DATAHUB </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DATAHUB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
