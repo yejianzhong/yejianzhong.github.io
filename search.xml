@@ -1,82 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>在WSDL配置内添加新方法</title>
-      <link href="/2019/11/13/FLUXWMSSOAP%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/"/>
-      <url>/2019/11/13/FLUXWMSSOAP%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/</url>
-      
-        <content type="html"><![CDATA[<p># </p><p>命名规则：以put<strong><strong>Data,及put</strong></strong>DataResponse，比如要处理Location业务，我们可以命名为</p><p>putLocationData及putLocationResponse。因此在你想复制本文的基本配置前，你可以先将本文的原</p><p>方法基本字符（AsnSerialno）全部替换为你期望的方法名如：Location，再维护好表字段信息后即</p><p>可按以下节点路径复制到WSDL文件内即可。</p><p>关于字段信息，我们可以通过SQL查询获取，以便快捷及准确，查表结构用SQL（自行替换你需要查询OWNER及TableName）</p><p>select ‘&lt;xs:element minOccurs=”0” name=”‘||a.COLUMN_NAME||’” type=”xs:string” /&gt;’ from all_tab_columns a where a.OWNER=’WMS_V431’ and a.TABLE_NAME=upper(‘doc_asn_serialno’) order by a.COLUMN_NAME; </p><p>同时关于字段信息内容的，不想显示的字段可以不配置到文件中。</p><p><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong>操作前请先备份原WSDL文件，以名配置出错无法还原。<strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></p><p>1)        在<a href="wsdl:types" target="_blank" rel="noopener">wsdl:types</a><a href="xs:schema" target="_blank" rel="noopener">xs:schema</a> 之间添加信息</p><p>&lt;xs:element name=”putAsnSerialnoData” type=”tns:putAsnSerialnoData” /&gt;</p><p>&lt;xs:element name=”putAsnSerialnoDataResponse” type=”tns:putAsnSerialnoDataResponse” /&gt;</p><p>&lt;xs:element name=”wmsAsnSerialnoHeader” type=”tns:wmsAsnSerialnoHeader” /&gt;</p><p>&lt;xs:element name=”wmsAsnSerialnoInfo” type=”tns:wmsAsnSerialnoInfo” /&gt;</p><p>&lt;xs:complexType name=”putAsnSerialnoData”&gt;</p><p><a href="xs:sequence" target="_blank" rel="noopener">xs:sequence</a></p><p>&lt;xs:element minOccurs=”0” name=”wmsSecurityInfo” type=”tns:wmsSecurityInfo” /&gt;</p><p>&lt;xs:element minOccurs=”0” name=”wmsAsnSerialnoInfo” type=”tns:wmsAsnSerialnoInfo” /&gt;</p><p>&lt;xs:element minOccurs=”0” name=”wmsParam” type=”tns:wmsParamInfo” /&gt;</p><p></p><p></p><p>&lt;xs:complexType name=”wmsAsnSerialnoHeader”&gt;</p><p><a href="xs:sequence" target="_blank" rel="noopener">xs:sequence</a></p><p>在这里粘入刚才SQL查询到的表结构结果内容。</p><p></p><p></p><p>&lt;xs:complexType name=”wmsAsnSerialnoInfo”&gt;</p><p><a href="xs:sequence" target="_blank" rel="noopener">xs:sequence</a></p><p>&lt;xs:element maxOccurs=”unbounded” minOccurs=”0” name=”wmsAsnSerialnoHeader” nillable=”true” type=”tns:wmsAsnSerialnoHeader” /&gt;</p><p>&lt;xs:element minOccurs=”0” name=”wmsResultInfo” type=”tns:wmsResultInfo” /&gt;</p><p></p><p></p><p>&lt;xs:complexType name=”putAsnSerialnoDataResponse”&gt;</p><p><a href="xs:sequence" target="_blank" rel="noopener">xs:sequence</a></p><p>&lt;xs:element minOccurs=”0” name=”return” type=”tns:wmsResultInfo” /&gt;</p><p></p><p></p><p>2)      在新的位置，正文内添加下面内容   </p><p>&lt;wsdl:message name=”putAsnSerialnoData”&gt;</p><p>  &lt;wsdl:part element=”tns:putAsnSerialnoData” name=”parameters”&gt;</p><p>  </p><p></p><p>&lt;wsdl:message name=”putAsnSerialnoDataResponse”&gt;</p><p>  &lt;wsdl:part element=”tns:putAsnSerialnoDataResponse” name=”parameters”&gt;</p><p>  </p><p></p><p>3)      在<a href="wsdl:portType" target="_blank" rel="noopener">wsdl:portType</a>之间添加下面内容</p><p>&lt;wsdl:operation name=”putAsnSerialnoData”&gt;</p><p>  &lt;wsdl:input message=”tns:putAsnSerialnoData” name=”putAsnSerialnoData”&gt;</p><p>  &lt;wsdl:output message=”tns:putAsnSerialnoDataResponse” name=”putAsnSerialnoDataResponse”&gt;</p><p></p><p>4)      在<a href="wsdl:binding" target="_blank" rel="noopener">wsdl:binding</a>之间添加下面内容</p><p>&lt;wsdl:operation name=”putAsnSerialnoData”&gt;</p><p>​       &lt;soap:operation soapAction=”” style=”document” /&gt;</p><p>​       &lt;wsdl:input name=”putAsnSerialnoData”&gt;</p><p>​         &lt;soap:body use=”literal” /&gt;</p><p>​       </p><p>​       &lt;wsdl:output name=”putAsnSerialnoDataResponse”&gt;</p><p>​         &lt;soap:body use=”literal” /&gt;</p><p>​       </p><p></p><p>​      </p><p>============================== WSDL间添加内容全部结束 ======================    </p>]]></content>
-      
-      
+<search>
+  <entry>
+    <title><![CDATA[在WSDL配置内添加新方法]]></title>
+    <url>%2F2019%2F11%2F13%2F%E5%9C%A8WSDL%E9%85%8D%E7%BD%AE%E5%86%85%E6%B7%BB%E5%8A%A0%E6%96%B0%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[# 命名规则：以putData,及putDataResponse，比如要处理Location业务，我们可以命名为 putLocationData及putLocationResponse。因此在你想复制本文的基本配置前，你可以先将本文的原 方法基本字符（AsnSerialno）全部替换为你期望的方法名如：Location，再维护好表字段信息后即 可按以下节点路径复制到WSDL文件内即可。 关于字段信息，我们可以通过SQL查询获取，以便快捷及准确，查表结构用SQL（自行替换你需要查询OWNER及TableName） select ‘&lt;xs:element minOccurs=”0” name=”‘||a.COLUMN_NAME||’” type=”xs:string” /&gt;’ from all_tab_columns a where a.OWNER=’WMS_V431’ and a.TABLE_NAME=upper(‘doc_asn_serialno’) order by a.COLUMN_NAME; 同时关于字段信息内容的，不想显示的字段可以不配置到文件中。 *****操作前请先备份原WSDL文件，以名配置出错无法还原。** 1) 在wsdl:typesxs:schema 之间添加信息 12345678910111213141516171819202122232425&lt;xs:element name="putAsnSerialnoData" type="tns:putAsnSerialnoData" /&gt;&lt;xs:element name="putAsnSerialnoDataResponse" type="tns:putAsnSerialnoDataResponse" /&gt;&lt;xs:element name="wmsAsnSerialnoHeader" type="tns:wmsAsnSerialnoHeader" /&gt;&lt;xs:element name="wmsAsnSerialnoInfo" type="tns:wmsAsnSerialnoInfo" /&gt;&lt;xs:complexType name="putAsnSerialnoData"&gt;&lt;xs:sequence&gt;&lt;xs:element minOccurs="0" name="wmsSecurityInfo" type="tns:wmsSecurityInfo" /&gt;&lt;xs:element minOccurs="0" name="wmsAsnSerialnoInfo" type="tns:wmsAsnSerialnoInfo" /&gt;&lt;xs:element minOccurs="0" name="wmsParam" type="tns:wmsParamInfo" /&gt;&lt;/xs:sequence&gt;&lt;/xs:complexType&gt;&lt;xs:complexType name="wmsAsnSerialnoHeader"&gt;&lt;xs:sequence&gt; 在这里粘入刚才SQL查询到的表结构结果内容。 12345678910111213141516171819202122232425&lt;/xs:sequence&gt;&lt;/xs:complexType&gt;&lt;xs:complexType name="wmsAsnSerialnoInfo"&gt;&lt;xs:sequence&gt;&lt;xs:element maxOccurs="unbounded" minOccurs="0" name="wmsAsnSerialnoHeader" nillable="true" type="tns:wmsAsnSerialnoHeader" /&gt;&lt;xs:element minOccurs="0" name="wmsResultInfo" type="tns:wmsResultInfo" /&gt;&lt;/xs:sequence&gt;&lt;/xs:complexType&gt;&lt;xs:complexType name="putAsnSerialnoDataResponse"&gt;&lt;xs:sequence&gt;&lt;xs:element minOccurs="0" name="return" type="tns:wmsResultInfo" /&gt;&lt;/xs:sequence&gt;&lt;/xs:complexType&gt; 2) 在新的位置，正文内添加下面内容 123456789101112131415&lt;wsdl:message name="putAsnSerialnoData"&gt; &lt;wsdl:part element="tns:putAsnSerialnoData" name="parameters"&gt; &lt;/wsdl:part&gt;&lt;/wsdl:message&gt;&lt;wsdl:message name="putAsnSerialnoDataResponse"&gt; &lt;wsdl:part element="tns:putAsnSerialnoDataResponse" name="parameters"&gt; &lt;/wsdl:part&gt;&lt;/wsdl:message&gt; 3) 在wsdl:portType之间添加下面内容 1234567&lt;wsdl:operation name="putAsnSerialnoData"&gt; &lt;wsdl:input message="tns:putAsnSerialnoData" name="putAsnSerialnoData"&gt;&lt;/wsdl:input&gt; &lt;wsdl:output message="tns:putAsnSerialnoDataResponse" name="putAsnSerialnoDataResponse"&gt;&lt;/wsdl:output&gt;&lt;/wsdl:operation&gt; 4) 在wsdl:binding之间添加下面内容 1234567891011121314151617&lt;wsdl:operation name="putAsnSerialnoData"&gt; &lt;soap:operation soapAction="" style="document" /&gt; &lt;wsdl:input name="putAsnSerialnoData"&gt; &lt;soap:body use="literal" /&gt; &lt;/wsdl:input&gt; &lt;wsdl:output name="putAsnSerialnoDataResponse"&gt; &lt;soap:body use="literal" /&gt; &lt;/wsdl:output&gt;&lt;/wsdl:operation&gt; ​ ============================== WSDL间添加内容全部结束 ======================]]></content>
       <categories>
-          
-          <category> DATAHUB </category>
-          
+        <category>DATAHUB</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> DATAHUB </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>DATAHUB_TEST</title>
-      <link href="/2019/09/14/DATAHUB_TEST/"/>
-      <url>/2019/09/14/DATAHUB_TEST/</url>
-      
-        <content type="html"><![CDATA[<h1 id="DATAHUB新建文档测试"><a href="#DATAHUB新建文档测试" class="headerlink" title="DATAHUB新建文档测试"></a>DATAHUB新建文档测试</h1><h2 id="DATAHUB问题记录："><a href="#DATAHUB问题记录：" class="headerlink" title="DATAHUB问题记录："></a>DATAHUB问题记录：</h2><h3 id="以下为代码块显示测试"><a href="#以下为代码块显示测试" class="headerlink" title="以下为代码块显示测试"></a>以下为代码块显示测试</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">memParam.clear();</span><br><span class="line">           memParam.add(MsgListCustStrCVal.ORGANIZATIONID, organizationId);</span><br><span class="line">           memParam.add(MsgListCustStrCVal.DATAHUB_CUSTOMERID, datahubCustomerId);</span><br><span class="line">           memParam.add(MsgListCustStrCVal.MESSAGEID, messageId);</span><br><span class="line">           memParam.addNoIn(MsgListCustStrCVal.MESSAGETYPE, <span class="string">"H"</span>);</span><br><span class="line">           memParam.addNoIn(MsgListCustStrCVal.INOUT, <span class="string">"O"</span>);</span><br><span class="line">           BizComponent bizMsgType = MemConfigUtils.getInstance().getMsgConfig(MsgListCustStrCVal.CACHE_ID, memParam);</span><br><span class="line">           List&lt;String&gt; detailStdTable = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">           <span class="keyword">for</span> (RecordMap&lt;String, Object&gt; record : bizMsgType.getRecords()) &#123; </span><br><span class="line">               detailStdTable.add(tableUtil.getStdTable(organizationId, datahubCustomerId, messageId, stdNo, record.getFieldValue(DatahubCommonCVal.MESSAGETYPE),</span><br><span class="line">                       messageGroupSysId));</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+      <tags>
+        <tag>DATAHUB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[DATAHUB_TEST]]></title>
+    <url>%2F2019%2F09%2F14%2FDATAHUB_TEST%2F</url>
+    <content type="text"><![CDATA[DATAHUB新建文档测试DATAHUB问题记录：以下为代码块显示测试123456789101112memParam.clear(); memParam.add(MsgListCustStrCVal.ORGANIZATIONID, organizationId); memParam.add(MsgListCustStrCVal.DATAHUB_CUSTOMERID, datahubCustomerId); memParam.add(MsgListCustStrCVal.MESSAGEID, messageId); memParam.addNoIn(MsgListCustStrCVal.MESSAGETYPE, "H"); memParam.addNoIn(MsgListCustStrCVal.INOUT, "O"); BizComponent bizMsgType = MemConfigUtils.getInstance().getMsgConfig(MsgListCustStrCVal.CACHE_ID, memParam); List&lt;String&gt; detailStdTable = new ArrayList&lt;String&gt;(); for (RecordMap&lt;String, Object&gt; record : bizMsgType.getRecords()) &#123; detailStdTable.add(tableUtil.getStdTable(organizationId, datahubCustomerId, messageId, stdNo, record.getFieldValue(DatahubCommonCVal.MESSAGETYPE), messageGroupSysId)); &#125;]]></content>
       <categories>
-          
-          <category> DATAHUB_TEST </category>
-          
+        <category>DATAHUB_TEST</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> DATAHUB_TEST </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>DATAHUB</title>
-      <link href="/2019/09/06/DATAHUB/"/>
-      <url>/2019/09/06/DATAHUB/</url>
-      
-        <content type="html"><![CDATA[<p>DATAHUB</p><p>DATAHUB问题记录：</p><p>以下为代码块显示测试</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">memParam.clear();</span><br><span class="line">           memParam.add(MsgListCustStrCVal.ORGANIZATIONID, organizationId);</span><br><span class="line">           memParam.add(MsgListCustStrCVal.DATAHUB_CUSTOMERID, datahubCustomerId);</span><br><span class="line">           memParam.add(MsgListCustStrCVal.MESSAGEID, messageId);</span><br><span class="line">           memParam.addNoIn(MsgListCustStrCVal.MESSAGETYPE, <span class="string">"H"</span>);</span><br><span class="line">           memParam.addNoIn(MsgListCustStrCVal.INOUT, <span class="string">"O"</span>);</span><br><span class="line">           BizComponent bizMsgType = MemConfigUtils.getInstance().getMsgConfig(MsgListCustStrCVal.CACHE_ID, memParam);</span><br><span class="line">           List&lt;String&gt; detailStdTable = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">           <span class="keyword">for</span> (RecordMap&lt;String, Object&gt; record : bizMsgType.getRecords()) &#123; </span><br><span class="line">               detailStdTable.add(tableUtil.getStdTable(organizationId, datahubCustomerId, messageId, stdNo, record.getFieldValue(DatahubCommonCVal.MESSAGETYPE),</span><br><span class="line">                       messageGroupSysId));</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+      <tags>
+        <tag>DATAHUB_TEST</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[DATAHUB]]></title>
+    <url>%2F2019%2F09%2F06%2FDATAHUB%2F</url>
+    <content type="text"><![CDATA[DATAHUB DATAHUB问题记录： 以下为代码块显示测试 123456789101112memParam.clear(); memParam.add(MsgListCustStrCVal.ORGANIZATIONID, organizationId); memParam.add(MsgListCustStrCVal.DATAHUB_CUSTOMERID, datahubCustomerId); memParam.add(MsgListCustStrCVal.MESSAGEID, messageId); memParam.addNoIn(MsgListCustStrCVal.MESSAGETYPE, "H"); memParam.addNoIn(MsgListCustStrCVal.INOUT, "O"); BizComponent bizMsgType = MemConfigUtils.getInstance().getMsgConfig(MsgListCustStrCVal.CACHE_ID, memParam); List&lt;String&gt; detailStdTable = new ArrayList&lt;String&gt;(); for (RecordMap&lt;String, Object&gt; record : bizMsgType.getRecords()) &#123; detailStdTable.add(tableUtil.getStdTable(organizationId, datahubCustomerId, messageId, stdNo, record.getFieldValue(DatahubCommonCVal.MESSAGETYPE), messageGroupSysId)); &#125;]]></content>
       <categories>
-          
-          <category> DATAHUB </category>
-          
+        <category>DATAHUB</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> DATAHUB </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>DATAHUB</tag>
+      </tags>
+  </entry>
 </search>
