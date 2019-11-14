@@ -57,18 +57,18 @@
   };
 </script>
 
-  <meta name="description" content="本文说明顺丰获取快递单号配置 在标准的DATAHUB库已经有标准的配置，需要修改几个关键配置即可使用，DataHub_CustomerId=EXPRESS,Messageid=SF_MAILNO 检查WMS库是否有对应视图，视图名为：IDX_SFEXPRESS_GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）修改TM_MESSAGELIST_CUSTOME">
+  <meta name="description" content="本文说明顺丰获取快递单号配置在标准的DATAHUB库已经有标准的配置，需要修改几个关键配置即可使用，DataHub_CustomerId=EXPRESS,Messageid=SF_MAILNO检查WMS库是否有对应视图，视图名为：IDX_SFEXPRESS_GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）修改TM_MESSAGELIST_CUSTOMER表">
 <meta name="keywords" content="DATAHUB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="顺丰获取快递单号接口配置">
 <meta property="og:url" content="https://yjziyh.top/2019/11/14/获取顺丰快递单号配置/index.html">
 <meta property="og:site_name" content="YejianzhongのBlog">
-<meta property="og:description" content="本文说明顺丰获取快递单号配置 在标准的DATAHUB库已经有标准的配置，需要修改几个关键配置即可使用，DataHub_CustomerId=EXPRESS,Messageid=SF_MAILNO 检查WMS库是否有对应视图，视图名为：IDX_SFEXPRESS_GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）修改TM_MESSAGELIST_CUSTOME">
+<meta property="og:description" content="本文说明顺丰获取快递单号配置在标准的DATAHUB库已经有标准的配置，需要修改几个关键配置即可使用，DataHub_CustomerId=EXPRESS,Messageid=SF_MAILNO检查WMS库是否有对应视图，视图名为：IDX_SFEXPRESS_GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）修改TM_MESSAGELIST_CUSTOMER表">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-11-14T04:22:53.377Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="顺丰获取快递单号接口配置">
-<meta name="twitter:description" content="本文说明顺丰获取快递单号配置 在标准的DATAHUB库已经有标准的配置，需要修改几个关键配置即可使用，DataHub_CustomerId=EXPRESS,Messageid=SF_MAILNO 检查WMS库是否有对应视图，视图名为：IDX_SFEXPRESS_GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）修改TM_MESSAGELIST_CUSTOME">
+<meta name="twitter:description" content="本文说明顺丰获取快递单号配置在标准的DATAHUB库已经有标准的配置，需要修改几个关键配置即可使用，DataHub_CustomerId=EXPRESS,Messageid=SF_MAILNO检查WMS库是否有对应视图，视图名为：IDX_SFEXPRESS_GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）修改TM_MESSAGELIST_CUSTOMER表">
   <link rel="canonical" href="https://yjziyh.top/2019/11/14/获取顺丰快递单号配置/">
 
 
@@ -333,6 +333,27 @@
   </span>
   
   
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>3.3k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>3 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -343,9 +364,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>本文说明顺丰获取快递单号配置</p>
-<p>在标准的DATAHUB库已经有标准的配置，需要修改几个关键配置即可使用，DataHub_CustomerId=EXPRESS,Messageid=SF_MAILNO</p>
-<h3 id="检查WMS库是否有对应视图，视图名为：IDX-SFEXPRESS-GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）"><a href="#检查WMS库是否有对应视图，视图名为：IDX-SFEXPRESS-GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）" class="headerlink" title="检查WMS库是否有对应视图，视图名为：IDX_SFEXPRESS_GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）"></a>检查WMS库是否有对应视图，视图名为：IDX_SFEXPRESS_GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）</h3><h3 id="修改TM-MESSAGELIST-CUSTOMER表"><a href="#修改TM-MESSAGELIST-CUSTOMER表" class="headerlink" title="修改TM_MESSAGELIST_CUSTOMER表"></a>修改TM_MESSAGELIST_CUSTOMER表</h3><h4 id="JNDI-NAME为顺丰接口调用地址，将字段为"><a href="#JNDI-NAME为顺丰接口调用地址，将字段为" class="headerlink" title="JNDI_NAME为顺丰接口调用地址，将字段为"></a>JNDI_NAME为顺丰接口调用地址，将字段为</h4><p><a href="http://bsp-oisp.sf-express.com/bsp-oisp/ws/expressService?wsdl" target="_blank" rel="noopener">http://bsp-oisp.sf-express.com/bsp-oisp/ws/expressService?wsdl</a></p>
+        <p>本文说明顺丰获取快递单号配置</p><p>在标准的DATAHUB库已经有标准的配置，需要修改几个关键配置即可使用，DataHub_CustomerId=EXPRESS,Messageid=SF_MAILNO</p><h3 id="检查WMS库是否有对应视图，视图名为：IDX-SFEXPRESS-GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）"><a href="#检查WMS库是否有对应视图，视图名为：IDX-SFEXPRESS-GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）" class="headerlink" title="检查WMS库是否有对应视图，视图名为：IDX_SFEXPRESS_GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）"></a>检查WMS库是否有对应视图，视图名为：IDX_SFEXPRESS_GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）</h3><h3 id="修改TM-MESSAGELIST-CUSTOMER表"><a href="#修改TM-MESSAGELIST-CUSTOMER表" class="headerlink" title="修改TM_MESSAGELIST_CUSTOMER表"></a>修改TM_MESSAGELIST_CUSTOMER表</h3><h4 id="JNDI-NAME为顺丰接口调用地址，将字段为"><a href="#JNDI-NAME为顺丰接口调用地址，将字段为" class="headerlink" title="JNDI_NAME为顺丰接口调用地址，将字段为"></a>JNDI_NAME为顺丰接口调用地址，将字段为</h4><a id="more"></a>
+
+<p><a href="http://bsp-oisp.sf-express.com/bsp-oisp/ws/expressService?wsdl" target="_blank" rel="noopener">http://bsp-oisp.sf-express.com/bsp-oisp/ws/expressService?wsdl</a></p>
 <p>一般原字段有固定地址内容为 </p>
 <p>(使用请修改):<a href="http://bsp-oisp.sf-express.com/bsp-oisp/ws/expressService" target="_blank" rel="noopener">http://bsp-oisp.sf-express.com/bsp-oisp/ws/expressService</a></p>
 <p>删除http前的字段即可</p>
@@ -607,6 +628,16 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">叶剑忠</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">9k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">8 分钟</span>
 </div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 

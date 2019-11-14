@@ -57,18 +57,18 @@
   };
 </script>
 
-  <meta name="description" content="#  命名规则：以putData,及putDataResponse，比如要处理Location业务，我们可以命名为 putLocationData及putLocationResponse。因此在你想复制本文的基本配置前，你可以先将本文的原 方法基本字符（AsnSerialno）全部替换为你期望的方法名如：Location，再维护好表字段信息后即 可按以下节点路径复制到WSDL文件内即可。 关于字段">
+  <meta name="description" content="# 命名规则：以putData,及putDataResponse，比如要处理Location业务，我们可以命名为putLocationData及putLocationResponse。因此在你想复制本文的基本配置前，你可以先将本文的原方法基本字符（AsnSerialno）全部替换为你期望的方法名如：Location，再维护好表字段信息后即可按以下节点路径复制到WSDL文件内即可。关于字段信息，我们">
 <meta name="keywords" content="DATAHUB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在WSDL配置内添加新方法">
 <meta property="og:url" content="https://yjziyh.top/2019/11/13/在WSDL配置内添加新方法/index.html">
 <meta property="og:site_name" content="YejianzhongのBlog">
-<meta property="og:description" content="#  命名规则：以putData,及putDataResponse，比如要处理Location业务，我们可以命名为 putLocationData及putLocationResponse。因此在你想复制本文的基本配置前，你可以先将本文的原 方法基本字符（AsnSerialno）全部替换为你期望的方法名如：Location，再维护好表字段信息后即 可按以下节点路径复制到WSDL文件内即可。 关于字段">
+<meta property="og:description" content="# 命名规则：以putData,及putDataResponse，比如要处理Location业务，我们可以命名为putLocationData及putLocationResponse。因此在你想复制本文的基本配置前，你可以先将本文的原方法基本字符（AsnSerialno）全部替换为你期望的方法名如：Location，再维护好表字段信息后即可按以下节点路径复制到WSDL文件内即可。关于字段信息，我们">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-11-13T06:56:21.031Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在WSDL配置内添加新方法">
-<meta name="twitter:description" content="#  命名规则：以putData,及putDataResponse，比如要处理Location业务，我们可以命名为 putLocationData及putLocationResponse。因此在你想复制本文的基本配置前，你可以先将本文的原 方法基本字符（AsnSerialno）全部替换为你期望的方法名如：Location，再维护好表字段信息后即 可按以下节点路径复制到WSDL文件内即可。 关于字段">
+<meta name="twitter:description" content="# 命名规则：以putData,及putDataResponse，比如要处理Location业务，我们可以命名为putLocationData及putLocationResponse。因此在你想复制本文的基本配置前，你可以先将本文的原方法基本字符（AsnSerialno）全部替换为你期望的方法名如：Location，再维护好表字段信息后即可按以下节点路径复制到WSDL文件内即可。关于字段信息，我们">
   <link rel="canonical" href="https://yjziyh.top/2019/11/13/在WSDL配置内添加新方法/">
 
 
@@ -333,6 +333,27 @@
   </span>
   
   
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>3k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>3 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -343,12 +364,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p># </p>
-<p>命名规则：以put<strong><strong>Data,及put</strong></strong>DataResponse，比如要处理Location业务，我们可以命名为</p>
-<p>putLocationData及putLocationResponse。因此在你想复制本文的基本配置前，你可以先将本文的原</p>
-<p>方法基本字符（AsnSerialno）全部替换为你期望的方法名如：Location，再维护好表字段信息后即</p>
-<p>可按以下节点路径复制到WSDL文件内即可。</p>
-<p>关于字段信息，我们可以通过SQL查询获取，以便快捷及准确，查表结构用SQL（自行替换你需要查询OWNER及TableName）</p>
+        <p># </p><p>命名规则：以put<strong><strong>Data,及put</strong></strong>DataResponse，比如要处理Location业务，我们可以命名为</p><p>putLocationData及putLocationResponse。因此在你想复制本文的基本配置前，你可以先将本文的原</p><p>方法基本字符（AsnSerialno）全部替换为你期望的方法名如：Location，再维护好表字段信息后即</p><p>可按以下节点路径复制到WSDL文件内即可。</p><p>关于字段信息，我们可以通过SQL查询获取，以便快捷及准确，查表结构用SQL（自行替换你需要查询OWNER及TableName）</p><a id="more"></a>
+
+
+
+
+
 <p>select ‘&lt;xs:element minOccurs=”0” name=”‘||a.COLUMN_NAME||’” type=”xs:string” /&gt;’ from all_tab_columns a where a.OWNER=’WMS_V431’ and a.TABLE_NAME=upper(‘doc_asn_serialno’) order by a.COLUMN_NAME; </p>
 <p>同时关于字段信息内容的，不想显示的字段可以不配置到文件中。</p>
 <p><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong>操作前请先备份原WSDL文件，以名配置出错无法还原。<strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></p>
@@ -630,6 +651,16 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">叶剑忠</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">9k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">8 分钟</span>
 </div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 

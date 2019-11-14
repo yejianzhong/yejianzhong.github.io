@@ -332,6 +332,27 @@
   </span>
   
   
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>1.1k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -342,36 +363,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="顺丰子单申请-wms客户端调用datahub"><a href="#顺丰子单申请-wms客户端调用datahub" class="headerlink" title="顺丰子单申请 , wms客户端调用datahub"></a>顺丰子单申请 , wms客户端调用datahub</h2><p>WMS客户端配置的请求路径为 :</p>
-<p><a href="HTTP://IP+端口/datahubWeb/WMSSOAPCLIENT/EXPRESS_CLIENT" target="_blank" rel="noopener">http://IP+端口/datahubWeb/WMSSOAPCLIENT/EXPRESS_CLIENT</a> ;</p>
-<p>1、首先维护TM_BAS_CUSTOMER 表:</p>
-<p>a)       DATAHUB_CUSTOMERID = EXPRESS_CLIENT ；</p>
-<p>2、维护TM_STD_MESSAGELIST 表 ，新增2条记录 :</p>
-<p>a)       MESSAGEID = SF_01；</p>
-<p>b)       MESSAGEID = EXPRESS_T ;</p>
-<p>3、维护TM_MESSAGELIST_CUSTOMER 表： </p>
-<p>3.1 新增一条记录：</p>
-<p>i.         DATAHUB_CUSTOMERID = EXPRESS_CLIENT ；</p>
-<p>ii.        MESSAGEID = EXPRESS_T；</p>
-<p>iii.       USER_PARAM1配置查询承运商的SQL语句；</p>
-<p>iv.       USER_PARAM2维护承运商ID ；</p>
-<p>v.        USER_PARAM3维护新的DATAHUB_CUSTOMERID = EXPRESS ;</p>
-<p>vi.       USER_PARAM4维护新的MESSAGEID = SF_01 ; （若USER_PARAM2、USER_PARAM3、USER_PARAM4分别有多个，用’/’反斜杠隔开，但个数需一致）</p>
-<p>3.2 根据承运商ID得到新的DATAHUB_CUSTOMERID和MESSAGEID后，再新增一条记录：</p>
-<p>i.         DATDHUB_CUSTOMERID = EXPRESS ;</p>
-<p>ii.        MESSAGEID = SF_01 ;</p>
-<p>iii.       USER_CLASS配置自定义类的路径 ；</p>
-<p>iv.       USER_PARAM1配置查询WMS数据库的语句 SQL1；</p>
-<p>v.        USER_PARAM2配置cartonseqno (为SQL1的一个字段)，</p>
-<p>vi.       cartonseqno 字段值等于1表示如果只有一箱，则直接把母单号更新到dropid字段中 ；</p>
-<p>vii.     cartonseqno 字段值大于1，需要构造请求报文，</p>
-<p>viii.    USER_PARAM3配置orderno ，</p>
-<p>ix.       OUT_USER_MOTHED配置校验码 ，</p>
-<p>x.        JNDI_NAME配置顺丰正式的请求地址：<a href="http://bsp-oisp.sf-express.com/bsp-oisp/ws/expressService?wsdl" target="_blank" rel="noopener">http://bsp-oisp.sf-express.com/bsp-oisp/ws/expressService?wsdl</a> ；</p>
-<p>xi.       OUT_USER_PARAM1配置表名A.字段名B，即 将顺丰返回的子单号更新到A表的B字段 ；</p>
-<p>需维护两个DATAHUB_CUSTOMERID , 维护两个MESSAGEID ， TM_MESSAGELIST_CUSTOMER表需要维护两条记录；</p>
-<p>WMSSOAPCLIENT 可在WEB.XML中找到对应的类：datahub.adapter.services.webservices.ws.user.WMSTransferServlet  ;</p>
-
+          <h2 id="顺丰子单申请-wms客户端调用datahub"><a href="#顺丰子单申请-wms客户端调用datahub" class="headerlink" title="顺丰子单申请 , wms客户端调用datahub"></a>顺丰子单申请 , wms客户端调用datahub</h2><p>WMS客户端配置的请求路径为 :</p><p><a href="HTTP://IP+端口/datahubWeb/WMSSOAPCLIENT/EXPRESS_CLIENT" target="_blank" rel="noopener">http://IP+端口/datahubWeb/WMSSOAPCLIENT/EXPRESS_CLIENT</a> ;</p><p>1、首先维护TM_BAS_CUSTOMER 表:</p><p>a)       DATAHUB_CUSTOMERID = EXPRESS_CLIENT ；</p><p>2、维护TM_STD_MESSAGELIST 表 ，新增2条记录 :</p><p>a)       MESSAGEID = SF_01；</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/11/14/获取顺丰子单号接口配置/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -470,6 +471,27 @@
   </span>
   
   
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>3.3k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>3 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -480,24 +502,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>本文说明顺丰获取快递单号配置</p>
-<p>在标准的DATAHUB库已经有标准的配置，需要修改几个关键配置即可使用，DataHub_CustomerId=EXPRESS,Messageid=SF_MAILNO</p>
-<h3 id="检查WMS库是否有对应视图，视图名为：IDX-SFEXPRESS-GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）"><a href="#检查WMS库是否有对应视图，视图名为：IDX-SFEXPRESS-GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）" class="headerlink" title="检查WMS库是否有对应视图，视图名为：IDX_SFEXPRESS_GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）"></a>检查WMS库是否有对应视图，视图名为：IDX_SFEXPRESS_GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）</h3><h3 id="修改TM-MESSAGELIST-CUSTOMER表"><a href="#修改TM-MESSAGELIST-CUSTOMER表" class="headerlink" title="修改TM_MESSAGELIST_CUSTOMER表"></a>修改TM_MESSAGELIST_CUSTOMER表</h3><h4 id="JNDI-NAME为顺丰接口调用地址，将字段为"><a href="#JNDI-NAME为顺丰接口调用地址，将字段为" class="headerlink" title="JNDI_NAME为顺丰接口调用地址，将字段为"></a>JNDI_NAME为顺丰接口调用地址，将字段为</h4><p><a href="http://bsp-oisp.sf-express.com/bsp-oisp/ws/expressService?wsdl" target="_blank" rel="noopener">http://bsp-oisp.sf-express.com/bsp-oisp/ws/expressService?wsdl</a></p>
-<p>一般原字段有固定地址内容为 </p>
-<p>(使用请修改):<a href="http://bsp-oisp.sf-express.com/bsp-oisp/ws/expressService" target="_blank" rel="noopener">http://bsp-oisp.sf-express.com/bsp-oisp/ws/expressService</a></p>
-<p>删除http前的字段即可</p>
-<h4 id="USER-PARAM5为顺丰提供给客户的客户卡号及检验码，客户卡号与检验码之前用”-”（逗号）分隔。"><a href="#USER-PARAM5为顺丰提供给客户的客户卡号及检验码，客户卡号与检验码之前用”-”（逗号）分隔。" class="headerlink" title="USER_PARAM5为顺丰提供给客户的客户卡号及检验码，客户卡号与检验码之前用”,”（逗号）分隔。"></a>USER_PARAM5为顺丰提供给客户的客户卡号及检验码，客户卡号与检验码之前用”,”（逗号）分隔。</h4><h4 id="OUT-USER-PARAM1为按顺序分别将快递单号，返回代码，返回描述这个三返回信息的记录位置，格式为表名-字段名，三个位置间以”-”分隔，如"><a href="#OUT-USER-PARAM1为按顺序分别将快递单号，返回代码，返回描述这个三返回信息的记录位置，格式为表名-字段名，三个位置间以”-”分隔，如" class="headerlink" title="OUT_USER_PARAM1为按顺序分别将快递单号，返回代码，返回描述这个三返回信息的记录位置，格式为表名.字段名，三个位置间以”/”分隔，如"></a>OUT_USER_PARAM1为按顺序分别将快递单号，返回代码，返回描述这个三返回信息的记录位置，格式为表名.字段名，三个位置间以”/”分隔，如</h4><p>DOC_ORDER_HEADER.SOREFERENCE5/DOC_ORDER_HEADER.H_EDI_14/DOC_ORDER_HEADER.H_EDI_15</p>
-<p>(注意：在维护的表名，这个表结构里必须要有orderno字段)</p>
-<p>当该字段没有维护时，默认将订单号记录于Doc_Order_Header. SOReference5内，将返回代码记录于Doc_Order_Header.H_EDI_02内。</p>
-<h4 id="OUT-USER-PARAM2为处理标记记录位置，格式为表名-字段名，只能维护一个-如：DOC-ORDER-HEADER-H-EDI-12，当返回记录为OK时，标记为Y，当为非OK时，标记为W"><a href="#OUT-USER-PARAM2为处理标记记录位置，格式为表名-字段名，只能维护一个-如：DOC-ORDER-HEADER-H-EDI-12，当返回记录为OK时，标记为Y，当为非OK时，标记为W" class="headerlink" title="OUT_USER_PARAM2为处理标记记录位置，格式为表名.字段名，只能维护一个,如：DOC_ORDER_HEADER.H_EDI_12，当返回记录为OK时，标记为Y，当为非OK时，标记为W"></a>OUT_USER_PARAM2为处理标记记录位置，格式为表名.字段名，只能维护一个,如：DOC_ORDER_HEADER.H_EDI_12，当返回记录为OK时，标记为Y，当为非OK时，标记为W</h4><p>当该字段没有维护时，默认记录于Doc_Order_Header. H_EDI_04内。返回记录是否正确，都将记录为Y。</p>
-<h4 id="OUT-USER-PARAM3为处理时间记录位置格式为表名-字段名，只能维护一个-如：DOC-ORDER-HEADER-H-EDI-13，同时需要维护OUT-USER-PARAM4，维护值为Oracle或SQLServer-大小写可忽略-，用于写时间时取sysdate或getDate-。"><a href="#OUT-USER-PARAM3为处理时间记录位置格式为表名-字段名，只能维护一个-如：DOC-ORDER-HEADER-H-EDI-13，同时需要维护OUT-USER-PARAM4，维护值为Oracle或SQLServer-大小写可忽略-，用于写时间时取sysdate或getDate-。" class="headerlink" title="OUT_USER_PARAM3为处理时间记录位置格式为表名.字段名，只能维护一个,如：DOC_ORDER_HEADER.H_EDI_13，同时需要维护OUT_USER_PARAM4，维护值为Oracle或SQLServer(大小写可忽略)，用于写时间时取sysdate或getDate()。"></a>OUT_USER_PARAM3为处理时间记录位置格式为表名.字段名，只能维护一个,如：DOC_ORDER_HEADER.H_EDI_13，同时需要维护OUT_USER_PARAM4，维护值为Oracle或SQLServer(大小写可忽略)，用于写时间时取sysdate或getDate()。</h4><p>当该字段没有维护时，默认记录于Doc_Order_Header. EDISendTime4内。</p>
-<p>视图脚本（Oracle）如下 </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> <span class="keyword">VIEW</span> IDX_SFEXPRESS_GETORDER <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">distinct</span> c.orderno,</span><br><span class="line">                c.orderno <span class="keyword">AS</span> ORDERID,</span><br><span class="line">                <span class="string">'1'</span> <span class="keyword">AS</span> EXPRESS_TYPE,</span><br><span class="line">                <span class="string">'客户名称'</span> <span class="keyword">AS</span> J_COMPANY,</span><br><span class="line">                <span class="string">'客户人'</span> <span class="keyword">AS</span> J_CONTACT,</span><br><span class="line">                <span class="string">'客户电话'</span> <span class="keyword">AS</span> J_TEL,</span><br><span class="line">                <span class="string">'客户地址'</span> <span class="keyword">AS</span> J_ADDRESS,</span><br><span class="line">                nvl(F.DESCR_C, <span class="string">'无'</span>) <span class="keyword">AS</span> D_COMPANY,</span><br><span class="line">                <span class="keyword">case</span></span><br><span class="line">                  <span class="keyword">when</span> d.ordertype <span class="keyword">in</span> (<span class="string">'11'</span>, <span class="string">'10'</span>) <span class="keyword">then</span></span><br><span class="line">                   nvl(d.i_contact, <span class="string">'无'</span>)</span><br><span class="line">                  <span class="keyword">else</span></span><br><span class="line">                   nvl(F.CONTACT1, <span class="string">'无'</span>)</span><br><span class="line">                <span class="keyword">end</span> <span class="keyword">AS</span> D_CONTACT,</span><br><span class="line">                <span class="keyword">case</span></span><br><span class="line">                  <span class="keyword">when</span> d.ordertype <span class="keyword">in</span> (<span class="string">'11'</span>, <span class="string">'10'</span>) <span class="keyword">then</span></span><br><span class="line">                   nvl(d.i_tel1 || <span class="string">'-'</span> || d.i_tel2, <span class="string">'无'</span>)</span><br><span class="line">                  <span class="keyword">else</span></span><br><span class="line">                   nvl(F.CONTACT1_TEL1 || <span class="string">'-'</span> || F.CONTACT1_TEL2, <span class="string">'无'</span>)</span><br><span class="line">                <span class="keyword">end</span> <span class="keyword">AS</span> D_TEL,</span><br><span class="line">                <span class="keyword">case</span></span><br><span class="line">                  <span class="keyword">when</span> d.ordertype <span class="keyword">in</span> (<span class="string">'11'</span>, <span class="string">'10'</span>) <span class="keyword">then</span></span><br><span class="line">                   nvl(d.i_address1, <span class="string">'无'</span>)</span><br><span class="line">                  <span class="keyword">else</span></span><br><span class="line">                   nvl(F.ADDRESS1, <span class="string">'无'</span>)</span><br><span class="line">                <span class="keyword">end</span> <span class="keyword">AS</span> D_ADDRESS,</span><br><span class="line">                <span class="string">'1'</span> <span class="keyword">AS</span> PARCEL_QUANTITY,</span><br><span class="line">                <span class="string">'1'</span> <span class="keyword">AS</span> PAY_METHOD,</span><br><span class="line">                <span class="string">'客户省份'</span> <span class="keyword">AS</span> J_PROVINCE,</span><br><span class="line">                <span class="string">'客户城市'</span> <span class="keyword">AS</span> J_CITY,</span><br><span class="line">                F.PROVINCE <span class="keyword">AS</span> D_PROVINCE,</span><br><span class="line">                <span class="keyword">case</span></span><br><span class="line">                  <span class="keyword">when</span> d.ordertype <span class="keyword">in</span> (<span class="string">'11'</span>, <span class="string">'10'</span>) <span class="keyword">then</span></span><br><span class="line">                   nvl(d.i_city, <span class="string">'无'</span>)</span><br><span class="line">                  <span class="keyword">else</span></span><br><span class="line">                   d.c_city</span><br><span class="line">                <span class="keyword">end</span> <span class="keyword">AS</span> D_CITY,</span><br><span class="line">                <span class="string">'客户卡号(与TM_MESSAGELIST_CUSTOMER.USER_PARAM5的客户卡号一致)'</span> <span class="keyword">as</span> CUSTID,</span><br><span class="line">                <span class="string">''</span> <span class="keyword">AS</span> <span class="keyword">TEMPLATE</span>,</span><br><span class="line">                <span class="string">''</span> <span class="keyword">AS</span> J_SHIPPERCODE,</span><br><span class="line">                <span class="string">''</span> <span class="keyword">AS</span> D_DELIVERYCODE,</span><br><span class="line">                <span class="string">''</span> <span class="keyword">AS</span> CARGO,</span><br><span class="line">                <span class="keyword">SUM</span>(C.QTY_EACH) <span class="keyword">AS</span> CARGO_COUNT,</span><br><span class="line">                <span class="string">'件'</span> <span class="keyword">AS</span> CARGO_UNIT,</span><br><span class="line">                <span class="string">'1'</span> <span class="keyword">AS</span> CARGO_WEIGHT,</span><br><span class="line">                <span class="string">'1'</span> <span class="keyword">AS</span> CARGO_AMOUNT,</span><br><span class="line">                <span class="string">'1'</span> <span class="keyword">AS</span> CARGO_TOTAL_WEIGHT,</span><br><span class="line">                <span class="keyword">SYSDATE</span> <span class="keyword">AS</span> SENDSTRATTIME,</span><br><span class="line">                <span class="string">''</span> <span class="keyword">AS</span> MAILNO,</span><br><span class="line">                <span class="string">''</span> <span class="keyword">AS</span> REMARK,</span><br><span class="line">                <span class="string">''</span> <span class="keyword">as</span> AddedServiceName1,</span><br><span class="line">                <span class="string">''</span> <span class="keyword">as</span> <span class="keyword">value</span>,</span><br><span class="line">                <span class="string">''</span> <span class="keyword">as</span> value1,</span><br><span class="line">                <span class="string">''</span> AddedServiceName2,</span><br><span class="line">                <span class="string">''</span> value2,</span><br><span class="line">                <span class="string">''</span> <span class="keyword">as</span> value21</span><br><span class="line">  <span class="keyword">from</span> act_allocation_details c</span><br><span class="line">  <span class="keyword">left</span> <span class="keyword">join</span> doc_order_header d</span><br><span class="line">    <span class="keyword">on</span> d.orderno = c.orderno</span><br><span class="line">  <span class="keyword">left</span> <span class="keyword">join</span> bas_customer f</span><br><span class="line">    <span class="keyword">on</span> f.customerid = d.consigneeid</span><br><span class="line">   <span class="keyword">and</span> f.customer_type = <span class="string">'CO'</span></span><br><span class="line"> <span class="keyword">where</span> <span class="number">1</span> = <span class="number">1</span></span><br><span class="line">   <span class="keyword">and</span> d.soreference5 <span class="keyword">IS</span> <span class="literal">NULL</span></span><br><span class="line">   <span class="keyword">AND</span> D.H_EDI_12 <span class="keyword">is</span> <span class="literal">null</span></span><br><span class="line">   <span class="keyword">and</span> <span class="keyword">substr</span>(D.carrierid, <span class="number">1</span>, <span class="number">1</span>) = <span class="string">'1'</span></span><br><span class="line">   <span class="keyword">and</span> <span class="keyword">rownum</span> &lt;= <span class="number">100</span></span><br><span class="line"> <span class="keyword">GROUP</span> <span class="keyword">BY</span> c.orderno,</span><br><span class="line">          c.orderno,</span><br><span class="line">          c.cartonseqno,</span><br><span class="line">          nvl(F.DESCR_C, <span class="string">'无'</span>),</span><br><span class="line">          <span class="keyword">case</span></span><br><span class="line">            <span class="keyword">when</span> d.ordertype <span class="keyword">in</span> (<span class="string">'11'</span>, <span class="string">'10'</span>) <span class="keyword">then</span></span><br><span class="line">             nvl(d.i_contact, <span class="string">'无'</span>)</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">             nvl(F.CONTACT1, <span class="string">'无'</span>)</span><br><span class="line">          <span class="keyword">end</span>,</span><br><span class="line">          <span class="keyword">case</span></span><br><span class="line">            <span class="keyword">when</span> d.ordertype <span class="keyword">in</span> (<span class="string">'11'</span>, <span class="string">'10'</span>) <span class="keyword">then</span></span><br><span class="line">             nvl(d.i_tel1 || <span class="string">'-'</span> || d.i_tel2, <span class="string">'无'</span>)</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">             nvl(F.CONTACT1_TEL1 || <span class="string">'-'</span> || F.CONTACT1_TEL2, <span class="string">'无'</span>)</span><br><span class="line">          <span class="keyword">end</span>,</span><br><span class="line">          <span class="keyword">case</span></span><br><span class="line">            <span class="keyword">when</span> d.ordertype <span class="keyword">in</span> (<span class="string">'11'</span>, <span class="string">'10'</span>) <span class="keyword">then</span></span><br><span class="line">             nvl(d.i_address1, <span class="string">'无'</span>)</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">             nvl(F.ADDRESS1, <span class="string">'无'</span>)</span><br><span class="line">          <span class="keyword">end</span>,</span><br><span class="line">          F.PROVINCE,</span><br><span class="line">          <span class="keyword">case</span></span><br><span class="line">            <span class="keyword">when</span> d.ordertype <span class="keyword">in</span> (<span class="string">'11'</span>, <span class="string">'10'</span>) <span class="keyword">then</span></span><br><span class="line">             nvl(d.i_city, <span class="string">'无'</span>)</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">             d.c_city</span><br><span class="line">          <span class="keyword">end</span>,</span><br><span class="line">          <span class="keyword">SYSDATE</span>;</span><br></pre></td></tr></table></figure>
-
-<p>标准配置涉及到的表:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> TC_TIMER_CUSTOMERMESSAGEID <span class="keyword">where</span> messageid=<span class="string">'SF_MAILNO'</span> <span class="keyword">and</span> datahub_customerid=<span class="string">'EXPRESS'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> TM_MESSAGELIST_CUSTOMER <span class="keyword">where</span> messageid=<span class="string">'SF_MAILNO'</span> <span class="keyword">and</span> datahub_customerid=<span class="string">'EXPRESS'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> TM_MESSAGE_CUSTOMER_XML <span class="keyword">where</span> messageid=<span class="string">'SF_MAILNO'</span> <span class="keyword">and</span> datahub_customerid=<span class="string">'EXPRESS'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> TM_STD_MESSAGELIST <span class="keyword">where</span> messageid=<span class="string">'SF_MAILNO'</span>;</span><br></pre></td></tr></table></figure>
-
-
+          <p>本文说明顺丰获取快递单号配置</p><p>在标准的DATAHUB库已经有标准的配置，需要修改几个关键配置即可使用，DataHub_CustomerId=EXPRESS,Messageid=SF_MAILNO</p><h3 id="检查WMS库是否有对应视图，视图名为：IDX-SFEXPRESS-GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）"><a href="#检查WMS库是否有对应视图，视图名为：IDX-SFEXPRESS-GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）" class="headerlink" title="检查WMS库是否有对应视图，视图名为：IDX_SFEXPRESS_GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）"></a>检查WMS库是否有对应视图，视图名为：IDX_SFEXPRESS_GetOrder，如没有，按本文后的视图脚本录入（Oracle版本，MSSQL请自行修改）</h3><h3 id="修改TM-MESSAGELIST-CUSTOMER表"><a href="#修改TM-MESSAGELIST-CUSTOMER表" class="headerlink" title="修改TM_MESSAGELIST_CUSTOMER表"></a>修改TM_MESSAGELIST_CUSTOMER表</h3><h4 id="JNDI-NAME为顺丰接口调用地址，将字段为"><a href="#JNDI-NAME为顺丰接口调用地址，将字段为" class="headerlink" title="JNDI_NAME为顺丰接口调用地址，将字段为"></a>JNDI_NAME为顺丰接口调用地址，将字段为</h4>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/11/14/获取顺丰快递单号配置/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -596,6 +610,27 @@
   </span>
   
   
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>3k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>3 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -606,47 +641,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p># </p>
-<p>命名规则：以put<strong><strong>Data,及put</strong></strong>DataResponse，比如要处理Location业务，我们可以命名为</p>
-<p>putLocationData及putLocationResponse。因此在你想复制本文的基本配置前，你可以先将本文的原</p>
-<p>方法基本字符（AsnSerialno）全部替换为你期望的方法名如：Location，再维护好表字段信息后即</p>
-<p>可按以下节点路径复制到WSDL文件内即可。</p>
-<p>关于字段信息，我们可以通过SQL查询获取，以便快捷及准确，查表结构用SQL（自行替换你需要查询OWNER及TableName）</p>
-<p>select ‘&lt;xs:element minOccurs=”0” name=”‘||a.COLUMN_NAME||’” type=”xs:string” /&gt;’ from all_tab_columns a where a.OWNER=’WMS_V431’ and a.TABLE_NAME=upper(‘doc_asn_serialno’) order by a.COLUMN_NAME; </p>
-<p>同时关于字段信息内容的，不想显示的字段可以不配置到文件中。</p>
-<p><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong>操作前请先备份原WSDL文件，以名配置出错无法还原。<strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></p>
-<h3 id="在wsdl-typesxs-schema-之间添加信息"><a href="#在wsdl-typesxs-schema-之间添加信息" class="headerlink" title="在wsdl:typesxs:schema 之间添加信息"></a>在<a href="wsdl:types" target="_blank" rel="noopener">wsdl:types</a><a href="xs:schema" target="_blank" rel="noopener">xs:schema</a> 之间添加信息</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoData"</span> <span class="attr">type</span>=<span class="string">"tns:putAsnSerialnoData"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoDataResponse"</span> <span class="attr">type</span>=<span class="string">"tns:putAsnSerialnoDataResponse"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"wmsAsnSerialnoHeader"</span> <span class="attr">type</span>=<span class="string">"tns:wmsAsnSerialnoHeader"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"wmsAsnSerialnoInfo"</span> <span class="attr">type</span>=<span class="string">"tns:wmsAsnSerialnoInfo"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:complexType</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoData"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">minOccurs</span>=<span class="string">"0"</span> <span class="attr">name</span>=<span class="string">"wmsSecurityInfo"</span> <span class="attr">type</span>=<span class="string">"tns:wmsSecurityInfo"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">minOccurs</span>=<span class="string">"0"</span> <span class="attr">name</span>=<span class="string">"wmsAsnSerialnoInfo"</span> <span class="attr">type</span>=<span class="string">"tns:wmsAsnSerialnoInfo"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">minOccurs</span>=<span class="string">"0"</span> <span class="attr">name</span>=<span class="string">"wmsParam"</span> <span class="attr">type</span>=<span class="string">"tns:wmsParamInfo"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:complexType</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:complexType</span> <span class="attr">name</span>=<span class="string">"wmsAsnSerialnoHeader"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:sequence</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>在这里粘入刚才SQL查询到的表结构结果内容。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:complexType</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:complexType</span> <span class="attr">name</span>=<span class="string">"wmsAsnSerialnoInfo"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">maxOccurs</span>=<span class="string">"unbounded"</span> <span class="attr">minOccurs</span>=<span class="string">"0"</span> <span class="attr">name</span>=<span class="string">"wmsAsnSerialnoHeader"</span> <span class="attr">nillable</span>=<span class="string">"true"</span> <span class="attr">type</span>=<span class="string">"tns:wmsAsnSerialnoHeader"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">minOccurs</span>=<span class="string">"0"</span> <span class="attr">name</span>=<span class="string">"wmsResultInfo"</span> <span class="attr">type</span>=<span class="string">"tns:wmsResultInfo"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:complexType</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:complexType</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoDataResponse"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">minOccurs</span>=<span class="string">"0"</span> <span class="attr">name</span>=<span class="string">"return"</span> <span class="attr">type</span>=<span class="string">"tns:wmsResultInfo"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:complexType</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-<h3 id="在新的位置，正文内添加下面内容"><a href="#在新的位置，正文内添加下面内容" class="headerlink" title="在新的位置，正文内添加下面内容"></a>在新的位置，正文内添加下面内容</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">wsdl:message</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoData"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">wsdl:part</span> <span class="attr">element</span>=<span class="string">"tns:putAsnSerialnoData"</span> <span class="attr">name</span>=<span class="string">"parameters"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">wsdl:part</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">wsdl:message</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">wsdl:message</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoDataResponse"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">wsdl:part</span> <span class="attr">element</span>=<span class="string">"tns:putAsnSerialnoDataResponse"</span> <span class="attr">name</span>=<span class="string">"parameters"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">wsdl:part</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">wsdl:message</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h3 id="在wsdl-portType之间添加下面内容"><a href="#在wsdl-portType之间添加下面内容" class="headerlink" title="在wsdl:portType之间添加下面内容"></a>在<a href="wsdl:portType" target="_blank" rel="noopener">wsdl:portType</a>之间添加下面内容</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">wsdl:operation</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoData"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">wsdl:input</span> <span class="attr">message</span>=<span class="string">"tns:putAsnSerialnoData"</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoData"</span>&gt;</span><span class="tag">&lt;/<span class="name">wsdl:input</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">wsdl:output</span> <span class="attr">message</span>=<span class="string">"tns:putAsnSerialnoDataResponse"</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoDataResponse"</span>&gt;</span><span class="tag">&lt;/<span class="name">wsdl:output</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">wsdl:operation</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="在wsdl-binding之间添加下面内容"><a href="#在wsdl-binding之间添加下面内容" class="headerlink" title="在wsdl:binding之间添加下面内容"></a>在<a href="wsdl:binding" target="_blank" rel="noopener">wsdl:binding</a>之间添加下面内容</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">wsdl:operation</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoData"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">     <span class="tag">&lt;<span class="name">soap:operation</span> <span class="attr">soapAction</span>=<span class="string">""</span> <span class="attr">style</span>=<span class="string">"document"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="tag">&lt;<span class="name">wsdl:input</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoData"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">         <span class="tag">&lt;<span class="name">soap:body</span> <span class="attr">use</span>=<span class="string">"literal"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="tag">&lt;/<span class="name">wsdl:input</span>&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="tag">&lt;<span class="name">wsdl:output</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoDataResponse"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">         <span class="tag">&lt;<span class="name">soap:body</span> <span class="attr">use</span>=<span class="string">"literal"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="tag">&lt;/<span class="name">wsdl:output</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">wsdl:operation</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>​      </p>
-<p>============================== WSDL间添加内容全部结束 ======================    </p>
-
+          <p># </p><p>命名规则：以put<strong><strong>Data,及put</strong></strong>DataResponse，比如要处理Location业务，我们可以命名为</p><p>putLocationData及putLocationResponse。因此在你想复制本文的基本配置前，你可以先将本文的原</p><p>方法基本字符（AsnSerialno）全部替换为你期望的方法名如：Location，再维护好表字段信息后即</p><p>可按以下节点路径复制到WSDL文件内即可。</p><p>关于字段信息，我们可以通过SQL查询获取，以便快捷及准确，查表结构用SQL（自行替换你需要查询OWNER及TableName）</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/11/13/在WSDL配置内添加新方法/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -753,6 +757,27 @@
   </span>
   
   
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>757</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -864,6 +889,27 @@
   </span>
   
   
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>751</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -1064,6 +1110,16 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">叶剑忠</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">9k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">8 分钟</span>
 </div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
