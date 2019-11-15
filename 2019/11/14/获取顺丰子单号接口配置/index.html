@@ -57,18 +57,18 @@
   };
 </script>
 
-  <meta name="description" content="顺丰子单申请 , wms客户端调用datahubWMS客户端配置的请求路径为 :http://IP+端口/datahubWeb/WMSSOAPCLIENT/EXPRESS_CLIENT ;1、首先维护TM_BAS_CUSTOMER 表:a)       DATAHUB_CUSTOMERID = EXPRESS_CLIENT ；2、维护TM_STD_MESSAGELIST 表 ，新增2条记录 :a)">
+  <meta name="description" content="function doDecrypt (pwd, onError) { 	console.log(&apos;in doDecrypt&apos;); 	const txt = document.getElementById(&apos;enc_content&apos;).innerHTML; 	let plantext; 	try { 		const bytes = CryptoJS.AES.decrypt(txt, pwd);">
 <meta name="keywords" content="DATAHUB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="顺丰子单申请">
 <meta property="og:url" content="https://yjziyh.top/2019/11/14/获取顺丰子单号接口配置/index.html">
 <meta property="og:site_name" content="DATAHUB">
-<meta property="og:description" content="顺丰子单申请 , wms客户端调用datahubWMS客户端配置的请求路径为 :http://IP+端口/datahubWeb/WMSSOAPCLIENT/EXPRESS_CLIENT ;1、首先维护TM_BAS_CUSTOMER 表:a)       DATAHUB_CUSTOMERID = EXPRESS_CLIENT ；2、维护TM_STD_MESSAGELIST 表 ，新增2条记录 :a)">
+<meta property="og:description" content="function doDecrypt (pwd, onError) { 	console.log(&apos;in doDecrypt&apos;); 	const txt = document.getElementById(&apos;enc_content&apos;).innerHTML; 	let plantext; 	try { 		const bytes = CryptoJS.AES.decrypt(txt, pwd);">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-14T04:26:12.914Z">
+<meta property="og:updated_time" content="2019-11-15T07:46:58.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="顺丰子单申请">
-<meta name="twitter:description" content="顺丰子单申请 , wms客户端调用datahubWMS客户端配置的请求路径为 :http://IP+端口/datahubWeb/WMSSOAPCLIENT/EXPRESS_CLIENT ;1、首先维护TM_BAS_CUSTOMER 表:a)       DATAHUB_CUSTOMERID = EXPRESS_CLIENT ；2、维护TM_STD_MESSAGELIST 表 ，新增2条记录 :a)">
+<meta name="twitter:description" content="function doDecrypt (pwd, onError) { 	console.log(&apos;in doDecrypt&apos;); 	const txt = document.getElementById(&apos;enc_content&apos;).innerHTML; 	let plantext; 	try { 		const bytes = CryptoJS.AES.decrypt(txt, pwd);">
   <link rel="canonical" href="https://yjziyh.top/2019/11/14/获取顺丰子单号接口配置/">
 
 
@@ -289,11 +289,19 @@
                 
               
 
-              <time title="创建时间：2019-11-14 12:25:14 / 修改时间：12:26:12" itemprop="dateCreated datePublished" datetime="2019-11-14T12:25:14+08:00">2019-11-14</time>
+              <time title="创建时间：2019-11-14 12:25:14" itemprop="dateCreated datePublished" datetime="2019-11-14T12:25:14+08:00">2019-11-14</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-15 15:46:58" itemprop="dateModified" datetime="2019-11-15T15:46:58+08:00">2019-11-15</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -364,36 +372,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="顺丰子单申请-wms客户端调用datahub"><a href="#顺丰子单申请-wms客户端调用datahub" class="headerlink" title="顺丰子单申请 , wms客户端调用datahub"></a>顺丰子单申请 , wms客户端调用datahub</h2><p>WMS客户端配置的请求路径为 :</p><p><a href="HTTP://IP+端口/datahubWeb/WMSSOAPCLIENT/EXPRESS_CLIENT" target="_blank" rel="noopener">http://IP+端口/datahubWeb/WMSSOAPCLIENT/EXPRESS_CLIENT</a> ;</p><p>1、首先维护TM_BAS_CUSTOMER 表:</p><p>a)       DATAHUB_CUSTOMERID = EXPRESS_CLIENT ；</p><p>2、维护TM_STD_MESSAGELIST 表 ，新增2条记录 :</p><p>a)       MESSAGEID = SF_01；</p><a id="more"></a>
+        <script src="/js/crypto-js.js"></script><script>
+function doDecrypt (pwd, onError) {
+	console.log('in doDecrypt');
+	const txt = document.getElementById('enc_content').innerHTML;
+	let plantext;
+	try {
+		const bytes = CryptoJS.AES.decrypt(txt, pwd);
+		var plaintext = bytes.toString(CryptoJS.enc.Utf8);
+	} catch(err) {
+		if(onError) {
+			onError(err);
+		}
+		return;
+	}
+	document.getElementById('enc_content').innerHTML = plaintext;
+	document.getElementById('enc_content').style.display = 'block';
+	document.getElementById('enc_passwd').style.display = 'none';
+	if(typeof MathJax !== 'undefined') {
+		MathJax.Hub.Queue(
+			['resetEquationNumbers', MathJax.InputJax.TeX],
+			['PreProcess', MathJax.Hub],
+			['Reprocess', MathJax.Hub]
+		);
+	}
+}
+</script><a id="more"></a>
 
-
-
-
-
-<p>b)       MESSAGEID = EXPRESS_T ;</p>
-<p>3、维护TM_MESSAGELIST_CUSTOMER 表： </p>
-<p>3.1 新增一条记录：</p>
-<p>i.         DATAHUB_CUSTOMERID = EXPRESS_CLIENT ；</p>
-<p>ii.        MESSAGEID = EXPRESS_T；</p>
-<p>iii.       USER_PARAM1配置查询承运商的SQL语句；</p>
-<p>iv.       USER_PARAM2维护承运商ID ；</p>
-<p>v.        USER_PARAM3维护新的DATAHUB_CUSTOMERID = EXPRESS ;</p>
-<p>vi.       USER_PARAM4维护新的MESSAGEID = SF_01 ; （若USER_PARAM2、USER_PARAM3、USER_PARAM4分别有多个，用’/’反斜杠隔开，但个数需一致）</p>
-<p>3.2 根据承运商ID得到新的DATAHUB_CUSTOMERID和MESSAGEID后，再新增一条记录：</p>
-<p>i.         DATDHUB_CUSTOMERID = EXPRESS ;</p>
-<p>ii.        MESSAGEID = SF_01 ;</p>
-<p>iii.       USER_CLASS配置自定义类的路径 ；</p>
-<p>iv.       USER_PARAM1配置查询WMS数据库的语句 SQL1；</p>
-<p>v.        USER_PARAM2配置cartonseqno (为SQL1的一个字段)，</p>
-<p>vi.       cartonseqno 字段值等于1表示如果只有一箱，则直接把母单号更新到dropid字段中 ；</p>
-<p>vii.     cartonseqno 字段值大于1，需要构造请求报文，</p>
-<p>viii.    USER_PARAM3配置orderno ，</p>
-<p>ix.       OUT_USER_MOTHED配置校验码 ，</p>
-<p>x.        JNDI_NAME配置顺丰正式的请求地址：<a href="http://bsp-oisp.sf-express.com/bsp-oisp/ws/expressService?wsdl" target="_blank" rel="noopener">http://bsp-oisp.sf-express.com/bsp-oisp/ws/expressService?wsdl</a> ；</p>
-<p>xi.       OUT_USER_PARAM1配置表名A.字段名B，即 将顺丰返回的子单号更新到A表的B字段 ；</p>
-<p>需维护两个DATAHUB_CUSTOMERID , 维护两个MESSAGEID ， TM_MESSAGELIST_CUSTOMER表需要维护两条记录；</p>
-<p>WMSSOAPCLIENT 可在WEB.XML中找到对应的类：datahub.adapter.services.webservices.ws.user.WMSTransferServlet  ;</p>
-
+<div id="enc_content" style="display:none">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</div>
+<div id="enc_passwd"> <input id="enc_pwd_input" type="password" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div>
+<script>
+var onError = function(error) {
+	document.getElementById("enc_error").innerHTML = "password error!"
+};
+function decrypt() {
+var passwd = document.getElementById("enc_pwd_input").value;
+console.log(passwd);
+doDecrypt(passwd, onError);
+}
+</script>
+</div>
     </div>
 	<div>
 	  
@@ -503,8 +521,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#顺丰子单申请-wms客户端调用datahub"><span class="nav-number">1.</span> <span class="nav-text">顺丰子单申请 , wms客户端调用datahub</span></a></li></ol></div>
-        
       </div>
       <!--/noindex-->
 

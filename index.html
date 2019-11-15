@@ -288,11 +288,19 @@
                 
               
 
-              <time title="创建时间：2019-11-14 12:25:14 / 修改时间：12:26:12" itemprop="dateCreated datePublished" datetime="2019-11-14T12:25:14+08:00">2019-11-14</time>
+              <time title="创建时间：2019-11-14 12:25:14" itemprop="dateCreated datePublished" datetime="2019-11-14T12:25:14+08:00">2019-11-14</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-15 15:46:58" itemprop="dateModified" datetime="2019-11-15T15:46:58+08:00">2019-11-15</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -363,7 +371,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="顺丰子单申请-wms客户端调用datahub"><a href="#顺丰子单申请-wms客户端调用datahub" class="headerlink" title="顺丰子单申请 , wms客户端调用datahub"></a>顺丰子单申请 , wms客户端调用datahub</h2><p>WMS客户端配置的请求路径为 :</p><p><a href="HTTP://IP+端口/datahubWeb/WMSSOAPCLIENT/EXPRESS_CLIENT" target="_blank" rel="noopener">http://IP+端口/datahubWeb/WMSSOAPCLIENT/EXPRESS_CLIENT</a> ;</p><p>1、首先维护TM_BAS_CUSTOMER 表:</p><p>a)       DATAHUB_CUSTOMERID = EXPRESS_CLIENT ；</p><p>2、维护TM_STD_MESSAGELIST 表 ，新增2条记录 :</p><p>a)       MESSAGEID = SF_01；</p>
+          <script src="/js/crypto-js.js"></script><script>
+function doDecrypt (pwd, onError) {
+	console.log('in doDecrypt');
+	const txt = document.getElementById('enc_content').innerHTML;
+	let plantext;
+	try {
+		const bytes = CryptoJS.AES.decrypt(txt, pwd);
+		var plaintext = bytes.toString(CryptoJS.enc.Utf8);
+	} catch(err) {
+		if(onError) {
+			onError(err);
+		}
+		return;
+	}
+	document.getElementById('enc_content').innerHTML = plaintext;
+	document.getElementById('enc_content').style.display = 'block';
+	document.getElementById('enc_passwd').style.display = 'none';
+	if(typeof MathJax !== 'undefined') {
+		MathJax.Hub.Queue(
+			['resetEquationNumbers', MathJax.InputJax.TeX],
+			['PreProcess', MathJax.Hub],
+			['Reprocess', MathJax.Hub]
+		);
+	}
+}
+</script>
           <!--noindex-->
           
             <div class="post-button text-center">
