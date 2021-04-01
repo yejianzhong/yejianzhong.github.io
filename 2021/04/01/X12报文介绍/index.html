@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="DATAHUB">
 <meta property="og:description" content="ASC X12（Accredited Standards Committee X12）是由American National Standards Institute （ANSI）推行的EDI标准，包括一套标准和相应的消息定义的业务文档，广泛应用在各个行业。RSSBus Connect是ASC X12的一员。Apple EDI项目所涉及的X12业务报文主要有850（Purchase Order ）、">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-04-01T02:37:09.238Z">
+<meta property="og:updated_time" content="2021-04-01T02:40:07.726Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="X12报文样例">
 <meta name="twitter:description" content="ASC X12（Accredited Standards Committee X12）是由American National Standards Institute （ANSI）推行的EDI标准，包括一套标准和相应的消息定义的业务文档，广泛应用在各个行业。RSSBus Connect是ASC X12的一员。Apple EDI项目所涉及的X12业务报文主要有850（Purchase Order ）、">
@@ -289,7 +289,7 @@
                 
               
 
-              <time title="创建时间：2021-04-01 10:20:47 / 修改时间：10:37:09" itemprop="dateCreated datePublished" datetime="2021-04-01T10:20:47+08:00">2021-04-01</time>
+              <time title="创建时间：2021-04-01 10:20:47 / 修改时间：10:40:07" itemprop="dateCreated datePublished" datetime="2021-04-01T10:20:47+08:00">2021-04-01</time>
             </span>
           
             
@@ -341,7 +341,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>4.2k</span>
+              <span>3.2k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -351,7 +351,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>4 分钟</span>
+              <span>3 分钟</span>
             </span>
           
 
@@ -419,24 +419,6 @@
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SCH<span class="number">*5000</span><span class="number">*EA</span>**<span class="number">*002</span><span class="number">*20140928</span>~</span><br></pre></td></tr></table></figure>
 
 <p><strong>SCH segment：</strong> 是对要求到货日期的描述。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">wsdl:message</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoData"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">wsdl:part</span> <span class="attr">element</span>=<span class="string">"tns:putAsnSerialnoData"</span> <span class="attr">name</span>=<span class="string">"parameters"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">wsdl:part</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">wsdl:message</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">wsdl:message</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoDataResponse"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">wsdl:part</span> <span class="attr">element</span>=<span class="string">"tns:putAsnSerialnoDataResponse"</span> <span class="attr">name</span>=<span class="string">"parameters"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">wsdl:part</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">wsdl:message</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h3 id="在wsdl-portType之间添加下面内容"><a href="#在wsdl-portType之间添加下面内容" class="headerlink" title="在wsdl:portType之间添加下面内容"></a>在<a href="wsdl:portType" target="_blank" rel="noopener">wsdl:portType</a>之间添加下面内容</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">wsdl:operation</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoData"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">wsdl:input</span> <span class="attr">message</span>=<span class="string">"tns:putAsnSerialnoData"</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoData"</span>&gt;</span><span class="tag">&lt;/<span class="name">wsdl:input</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">wsdl:output</span> <span class="attr">message</span>=<span class="string">"tns:putAsnSerialnoDataResponse"</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoDataResponse"</span>&gt;</span><span class="tag">&lt;/<span class="name">wsdl:output</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">wsdl:operation</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="在wsdl-binding之间添加下面内容"><a href="#在wsdl-binding之间添加下面内容" class="headerlink" title="在wsdl:binding之间添加下面内容"></a>在<a href="wsdl:binding" target="_blank" rel="noopener">wsdl:binding</a>之间添加下面内容</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">wsdl:operation</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoData"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">     <span class="tag">&lt;<span class="name">soap:operation</span> <span class="attr">soapAction</span>=<span class="string">""</span> <span class="attr">style</span>=<span class="string">"document"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="tag">&lt;<span class="name">wsdl:input</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoData"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">         <span class="tag">&lt;<span class="name">soap:body</span> <span class="attr">use</span>=<span class="string">"literal"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="tag">&lt;/<span class="name">wsdl:input</span>&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="tag">&lt;<span class="name">wsdl:output</span> <span class="attr">name</span>=<span class="string">"putAsnSerialnoDataResponse"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">         <span class="tag">&lt;<span class="name">soap:body</span> <span class="attr">use</span>=<span class="string">"literal"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="tag">&lt;/<span class="name">wsdl:output</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">wsdl:operation</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>​      </p>
-<p>============================== WSDL间添加内容全部结束 ======================    </p>
 
     </div>
 	<div>
@@ -547,7 +529,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标准EDI-X12-850报文组成"><span class="nav-number">1.</span> <span class="nav-text">标准EDI X12 850报文组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对850-X12报文中每个segment的具体解析"><span class="nav-number">2.</span> <span class="nav-text">对850 X12报文中每个segment的具体解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ISA、GS-、GE、IEA-segment"><span class="nav-number">2.1.</span> <span class="nav-text">ISA、GS 、GE、IEA segment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业务部分segment"><span class="nav-number">2.2.</span> <span class="nav-text">业务部分segment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在wsdl-portType之间添加下面内容"><span class="nav-number">2.3.</span> <span class="nav-text">在wsdl:portType之间添加下面内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在wsdl-binding之间添加下面内容"><span class="nav-number">2.4.</span> <span class="nav-text">在wsdl:binding之间添加下面内容</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标准EDI-X12-850报文组成"><span class="nav-number">1.</span> <span class="nav-text">标准EDI X12 850报文组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对850-X12报文中每个segment的具体解析"><span class="nav-number">2.</span> <span class="nav-text">对850 X12报文中每个segment的具体解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ISA、GS-、GE、IEA-segment"><span class="nav-number">2.1.</span> <span class="nav-text">ISA、GS 、GE、IEA segment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业务部分segment"><span class="nav-number">2.2.</span> <span class="nav-text">业务部分segment</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -696,12 +678,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">17k</span>
+    <span title="站点总字数">16k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">15 分钟</span>
+    <span title="站点阅读时长">14 分钟</span>
 </div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
